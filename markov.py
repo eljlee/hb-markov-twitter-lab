@@ -82,6 +82,20 @@ def tweet(markov_text):
     return status.text
 
 
+def tweet_loop(chains):
+    """Giving user option to tweet again, if not, break"""
+
+    while True:
+        user_choice = raw_input("Press enter-key to tweet, q to quit. > ")
+
+        if user_choice != "q":
+            new_tweet = tweet(make_text(chains))
+            print new_tweet
+
+        else:
+            break
+
+
 # Get the filenames from the user through a command line prompt, ex:
 # python markov.py green-eggs.txt shakespeare.txt
 filenames = sys.argv[1:]
@@ -95,4 +109,5 @@ chains = make_chains(text)
 markov_text = make_text(chains)
 
 # Your task is to write a new function tweet, that will take chains as input
-tweet(markov_text)
+# tweet(markov_text)
+tweet_loop(chains)
