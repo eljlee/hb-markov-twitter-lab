@@ -62,7 +62,7 @@ def make_text(chains):
     # print markov_text
     # print markov_text[:280]
 
-    return markov_text[:140]
+    return markov_text[:140]  # "@soylentbleen " + markov_text[:126]
 
 
 def tweet(markov_text):
